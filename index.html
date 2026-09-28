@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ClimaBarranquilla</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Conexión con Supabase -->
     <script type="module">
-        import { createClient } 
+        import { createClient }
         from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
+        const SUPABASE_URL = "https://nzfsntndigfmqffgnpjd.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_MQ0DWptVpQdHdSWOUxxmjQ_ZCPXNdbf";
+
         window.supabase = createClient(
-            "TU_SUPABASE_URL",
-            "TU_SUPABASE_ANON_KEY"
+            SUPABASE_URL,
+            SUPABASE_KEY
         );
     </script>
 </head>
@@ -27,50 +33,60 @@
 
     <main>
 
+        <!-- Buscador -->
         <section class="buscador">
-            <input 
-                type="text" 
-                id="ciudadInput" 
+
+            <input
+                type="text"
+                id="ciudadInput"
                 placeholder="Escribe una ciudad..."
             >
 
             <button onclick="buscarCiudad()">
                 Buscar
             </button>
+
         </section>
 
+
+        <!-- Resultado del clima -->
         <section id="resultado" class="resultado">
+
             <h2>Busca una ciudad</h2>
-            <p>Aquí aparecerá la información meteorológica.</p>
+
+            <p>
+                Aquí aparecerá la información meteorológica.
+            </p>
+
         </section>
 
+
+        <!-- Ciudades favoritas -->
         <section class="favoritos">
+
             <h2>⭐ Ciudades favoritas</h2>
 
             <div id="listaFavoritos">
                 <p>Cargando...</p>
             </div>
+
         </section>
 
     </main>
 
+
     <footer>
-        <p>Proyecto escolar · API Open-Meteo</p>
+
+        <p>
+            Proyecto escolar · API Open-Meteo
+        </p>
+
     </footer>
 
+
+    <!-- JavaScript del proyecto -->
     <script src="script.js"></script>
 
 </body>
+
 </html>
-<script type="module">
-    import { createClient }
-    from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-    const SUPABASE_URL = "PEGA_AQUI_TU_URL";
-    const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
-
-    window.supabase = createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-    );
-</script>
