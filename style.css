@@ -1,106 +1,458 @@
+/* =========================================
+   CLIMABARRANQUILLA
+   ========================================= */
+
+
+/* ---------- CONFIGURACIÓN GENERAL ---------- */
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 
 body {
-    font-family: Arial, sans-serif;
-    background: #eef5f7;
-    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+
     min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff4ff 0%,
+            #f5fbff 50%,
+            #e8f7ff 100%
+        );
+
+    color: #1f2937;
 }
+
+
+/* ---------- ENCABEZADO ---------- */
 
 header {
-    background: linear-gradient(135deg, #0077b6, #00b4d8);
-    color: white;
     text-align: center;
-    padding: 50px 20px;
+
+    padding: 55px 20px 35px;
 }
 
-header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+
+.icono-clima {
+    font-size: 55px;
+
+    margin-bottom: 8px;
 }
+
+
+header h1 {
+    font-size: 44px;
+
+    color: #1261a0;
+
+    margin-bottom: 10px;
+
+    font-weight: 800;
+}
+
 
 header p {
     font-size: 18px;
-}
 
-main {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.buscador {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.buscador input {
-    flex: 1;
-    padding: 15px;
-    border: 2px solid #d1d5db;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
-    background: #0077b6;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #005f8a;
-}
-
-.resultado {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
-}
-
-.resultado h2 {
-    margin-bottom: 15px;
-}
-
-.temperatura {
-    font-size: 55px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.dato {
-    margin: 8px 0;
-    font-size: 17px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
     color: #64748b;
 }
 
+
+/* ---------- CONTENIDO ---------- */
+
+main {
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ---------- BUSCADOR ---------- */
+
+.buscador {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+
+#ciudadInput {
+    flex: 1;
+
+    padding: 17px 20px;
+
+    border: 2px solid #d5e8f5;
+
+    border-radius: 15px;
+
+    background: white;
+
+    font-size: 17px;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+#ciudadInput:focus {
+    border-color: #2196f3;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(33, 150, 243, 0.12);
+}
+
+
+button {
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 15px 24px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #2196f3;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.92;
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- TARJETA DEL CLIMA ---------- */
+
+.resultado {
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 24px;
+
+    padding: 34px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid #e0edf5;
+
+    box-shadow:
+        0 15px 40px
+        rgba(30, 90, 130, 0.12);
+
+    min-height: 230px;
+}
+
+
+.resultado h2 {
+    font-size: 29px;
+
+    color: #1e3a5f;
+
+    margin-bottom: 18px;
+}
+
+
+.resultado-inicial {
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.resultado-icono {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+
+.resultado-inicial p {
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- TEMPERATURA ---------- */
+
+.temperatura {
+    font-size: 68px;
+
+    font-weight: 800;
+
+    color: #1687d9;
+
+    margin-bottom: 16px;
+}
+
+
+/* ---------- DATOS METEOROLÓGICOS ---------- */
+
+.dato {
+    font-size: 18px;
+
+    color: #475569;
+
+    margin: 9px 0;
+}
+
+
+/* ---------- BOTÓN FAVORITO ---------- */
+
+.resultado button {
+    margin-top: 20px;
+
+    background: #f5b700;
+
+    color: white;
+}
+
+
+.resultado button:hover {
+    background: #dfa600;
+}
+
+
+/* ---------- FAVORITOS ---------- */
+
+.favoritos {
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    border: 1px solid #e0edf5;
+
+    box-shadow:
+        0 15px 40px
+        rgba(30, 90, 130, 0.10);
+}
+
+
+/* Título favoritos */
+
+.titulo-favoritos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+.estrella {
+    font-size: 32px;
+}
+
+
+.titulo-favoritos h2 {
+    color: #1e3a5f;
+
+    font-size: 26px;
+
+    margin-bottom: 3px;
+}
+
+
+.titulo-favoritos p {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* Lista */
+
+#listaFavoritos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+
+    gap: 15px;
+}
+
+
+/* Tarjeta favorita */
+
+.favorito {
+    background:
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #f8fcff
+        );
+
+    border: 1px solid #d6ebf8;
+
+    border-radius: 16px;
+
+    padding: 19px;
+
+    transition: 0.25s;
+
+    cursor: default;
+}
+
+
+.favorito:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(30, 90, 130, 0.12);
+}
+
+
+.favorito strong {
+    color: #1261a0;
+
+    font-size: 17px;
+}
+
+
+/* Sin favoritos */
+
+.sin-favoritos {
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px 45px;
+
+    margin-top: 40px;
+}
+
+
+.linea-footer {
+    width: 80px;
+
+    height: 3px;
+
+    background: #2196f3;
+
+    border-radius: 10px;
+
+    margin: 0 auto 22px;
+}
+
+
+.creditos-titulo {
+    font-size: 14px;
+
+    color: #78909c;
+
+    margin-bottom: 9px;
+}
+
+
+.creditos-nombres {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #1261a0;
+
+    margin-bottom: 10px;
+
+    line-height: 1.6;
+}
+
+
+.creditos-proyecto {
+    font-size: 13px;
+
+    color: #94a3b8;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
 @media (max-width: 600px) {
 
-    header h1 {
-        font-size: 30px;
+    header {
+        padding-top: 35px;
     }
+
+
+    header h1 {
+        font-size: 34px;
+    }
+
+
+    header p {
+        font-size: 16px;
+    }
+
 
     .buscador {
         flex-direction: column;
     }
 
-    button {
+
+    .buscador button {
         width: 100%;
     }
+
+
+    .resultado {
+        padding: 25px;
+    }
+
+
+    .temperatura {
+        font-size: 52px;
+    }
+
+
+    .favoritos {
+        padding: 23px;
+    }
+
+
+    .creditos-nombres {
+        font-size: 15px;
+    }
+
 }
