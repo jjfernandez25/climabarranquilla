@@ -26,48 +26,82 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
     <header>
-        <h1>🌤️ ClimaBarranquilla</h1>
-        <p>Consulta el clima de cualquier ciudad</p>
+        <div class="icono-clima">🌤️</div>
+
+        <h1>ClimaBarranquilla</h1>
+
+        <p>
+            Consulta el clima de cualquier ciudad
+        </p>
     </header>
+
 
     <main>
 
-        <!-- Buscador -->
+        <!-- BUSCADOR -->
         <section class="buscador">
 
             <input
                 type="text"
                 id="ciudadInput"
                 placeholder="Escribe una ciudad..."
+                autocomplete="off"
             >
 
             <button onclick="buscarCiudad()">
-                Buscar
+                🔍 Buscar
             </button>
 
         </section>
 
 
-        <!-- Resultado del clima -->
+        <!-- RESULTADO DEL CLIMA -->
         <section id="resultado" class="resultado">
 
-            <h2>Busca una ciudad</h2>
+            <div class="resultado-inicial">
 
-            <p>
-                Aquí aparecerá la información meteorológica.
-            </p>
+                <div class="resultado-icono">
+                    🌎
+                </div>
+
+                <h2>Busca una ciudad</h2>
+
+                <p>
+                    Escribe el nombre de una ciudad para consultar
+                    su información meteorológica.
+                </p>
+
+            </div>
 
         </section>
 
 
-        <!-- Ciudades favoritas -->
+        <!-- CIUDADES FAVORITAS -->
         <section class="favoritos">
 
-            <h2>⭐ Ciudades favoritas</h2>
+            <div class="titulo-favoritos">
+
+                <span class="estrella">⭐</span>
+
+                <div>
+                    <h2>Ciudades favoritas</h2>
+
+                    <p>
+                        Tus ciudades guardadas
+                    </p>
+                </div>
+
+            </div>
+
 
             <div id="listaFavoritos">
-                <p>Cargando...</p>
+
+                <p class="sin-favoritos">
+                    Cargando ciudades favoritas...
+                </p>
+
             </div>
 
         </section>
@@ -75,16 +109,28 @@
     </main>
 
 
+    <!-- FOOTER -->
     <footer>
 
-        <p>
-            Proyecto escolar · API Open-Meteo
+        <div class="linea-footer"></div>
+
+        <p class="creditos-titulo">
+            Proyecto desarrollado por
+        </p>
+
+        <p class="creditos-nombres">
+            Juan José Fernández · Isaac Rocha ·
+            Maximiliano Rendón · Ítalo
+        </p>
+
+        <p class="creditos-proyecto">
+            ClimaBarranquilla · API Open-Meteo
         </p>
 
     </footer>
 
 
-    <!-- JavaScript del proyecto -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
