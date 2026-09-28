@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaBarranquilla</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module">
+        import { createClient } 
+        from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+        window.supabase = createClient(
+            "TU_SUPABASE_URL",
+            "TU_SUPABASE_ANON_KEY"
+        );
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌤️ ClimaBarranquilla</h1>
+        <p>Consulta el clima de cualquier ciudad</p>
+    </header>
+
+    <main>
+
+        <section class="buscador">
+            <input 
+                type="text" 
+                id="ciudadInput" 
+                placeholder="Escribe una ciudad..."
+            >
+
+            <button onclick="buscarCiudad()">
+                Buscar
+            </button>
+        </section>
+
+        <section id="resultado" class="resultado">
+            <h2>Busca una ciudad</h2>
+            <p>Aquí aparecerá la información meteorológica.</p>
+        </section>
+
+        <section class="favoritos">
+            <h2>⭐ Ciudades favoritas</h2>
+
+            <div id="listaFavoritos">
+                <p>Cargando...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto escolar · API Open-Meteo</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
