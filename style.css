@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef5f7;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.buscador {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.buscador input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #0077b6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005f8a;
+}
+
+.resultado {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.resultado h2 {
+    margin-bottom: 15px;
+}
+
+.temperatura {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.dato {
+    margin: 8px 0;
+    font-size: 17px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .buscador {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
